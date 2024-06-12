@@ -1,0 +1,50 @@
+<section class="absolute w-full h-full bgImage flex justify-center items-center">
+  <div class="w-3/4 md:w-1/3 p-10 flex flex-col items-center bg-white bg-opacity-95 rounded-md shadow-2xl">
+    <div class="w-2/3 md:w-1/2 mb-10 my-3">
+      <a class="text-md font-bold leading-relaxed inline-block py-2 whitespace-nowrap cursor-pointer rounded mx-10">
+        <span class="text-green-400 text-2xl">LINK</span>
+        <span class="text-red-400 text-2xl">SKILLS</span>
+      </a>
+
+      <img src="../../../assets/images/link.svg" alt="" />
+    </div>
+
+    <div class="text-center">
+      <span class="text-2xl italic">This survey will help you get the right people with the right
+        skills.</span>
+    </div>
+
+    <!-- Form group, with username and company name as the form controls -->
+    <form [formGroup]="registerUserForm" (ngSubmit)="onStartSurvey()">
+      <div class="row flex flex-col my-8 gap-y-5">
+        <!-- User name input box -->
+        <div class="">
+          <input type="text" formControlName="name" placeholder="Provide your Name"
+            class="w-full px-3 py-1 placeholder-gray-300 border border-gray-200 rounded-md focus:outline-none focus:ring focus:bg-gray-50 focus:ring-transparent focus:border-gray-400" />
+        </div>
+        <!--  Organisation Name input box-->
+        <div class="">
+          <input type="text" formControlName="organisationName" placeholder="Organisation Name"
+            class="w-full px-3 py-1 placeholder-gray-300 border border-gray-200 rounded-md focus:outline-none focus:ring focus:bg-gray-50 focus:ring-transparent focus:border-gray-400" />
+        </div>
+
+        <!-- email input box -->
+        <div class="">
+
+          <input type="email" formControlName="email" placeholder="Email Address" required
+            class="w-full px-3 py-1 placeholder-gray-300 border border-gray-200 rounded-md focus:outline-none focus:ring focus:bg-gray-50 focus:ring-transparent focus:border-gray-400" />
+        </div>
+      </div>
+
+      <div class="text-center">
+        <!-- NgClass directive allows you to set the CSS class dynamically for a DOM element -->
+        <button type="submit" [ngClass]="registerUserForm.valid ? 'bg-green-200 px-8 py-2 rounded-full text-sm font-extrabold border-green-400 border-4 hover:bg-green-400 hover:shadow'
+              : 'bg-green-200 px-8 py-2 rounded-full text-sm  border-green-400 border-4 hover:bg-green-400 hover:shadow bg-green-100 px-8 py-2 rounded-full text-sm text-bold border-green-300 border-4 hover:bg-green-100 hover:shadow inline-block align-baseline cursor-not-allowed'
+          ">
+          START SURVEY
+        </button>
+      </div>
+
+    </form>
+  </div>
+</section>

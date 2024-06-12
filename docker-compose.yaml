@@ -1,0 +1,27 @@
+version: '2'
+services:
+    db:
+        image: 'postgres:13.2-alpine'
+        restart: always
+        env_file:
+            - ./database/.env/.common.env
+            - ./database/.env/.secrets.env
+        volumes:
+            - './database/db/:/var/lib/postgresql/data/'
+    server:
+        build: ./server/
+        restart: always
+        depends_on:
+            - db
+        links:
+            - 'db:db'
+        ports:
+            - '5000:3000'
+    client:
+        build: ./client/
+        depends_on:
+            - server
+        links:
+            - 'server:server'
+        ports:
+            - '5020:4200'

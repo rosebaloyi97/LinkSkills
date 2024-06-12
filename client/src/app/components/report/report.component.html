@@ -1,0 +1,398 @@
+<div class="w-full h-full bg-gray-100 mt-10">
+  <div class="min-h-full antialiased bg-gray-100 text-gray-800">
+    <nav>
+      <div class="fixed top-16 left-0 w-50 bg-white-400 h-full shadow-lg">
+        <div class="overflow-y-auto overflow-x-hidden flex-grow">
+          <ul class="py-6 space-y-1">
+            <li class="px-5">
+              <div class="flex flex-row items-center h-8">
+                <div
+                  class="flex font-semibold text-sm text-green-300 my-4 font-sans uppercase"
+                >
+                  Dashboard
+                </div>
+              </div>
+            </li>
+            
+            <!-- Report -->
+            <li class="px-5">
+              <div class="flex flex-row items-center h-8">
+                <div
+                  class="flex font-semibold text-sm text-green-300 my-4 font-sans uppercase"
+                >
+                  Report
+                </div>
+              </div>
+            </li>
+
+            <!-- Soft Skills -->
+            <li>
+              <a
+                (click)="displaySoft($event)"
+                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-green-100 text-gray-500 hover:text-gray-500 border-l-4 border-transparent hover:border-green-500 pr-6"
+              >
+                <span class="inline-flex justify-center items-center ml-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"
+                    />
+                  </svg>
+                </span>
+
+                <span
+                  class="ml-2 font-semibold text-sm tracking-wide truncate font-sans"
+                  >Soft Skills</span
+                >
+              </a>
+            </li>
+
+            <!-- Technical Skills -->
+            <li>
+              <a
+                (click)="displayTech($event)"
+                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-green-100 text-gray-500 hover:text-gray-500 border-l-4 border-transparent hover:border-green-500 pr-6"
+              >
+                <span class="inline-flex justify-center items-center ml-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="ml-2 font-semibold text-sm tracking-wide truncate font-sans"
+                  >Technical Skills</span
+                >
+              </a>
+            </li>
+
+            <!-- age range -->
+            <li>
+              <a
+                (click)="displayAge($event)"
+                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-green-100 text-gray-500 hover:text-gray-500 border-l-4 border-transparent hover:border-green-500 pr-6"
+              >
+                <span class="inline-flex justify-center items-center ml-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="ml-2 font-semibold text-sm tracking-wide truncate font-sans"
+                  >Age Range</span
+                >
+              </a>
+            </li>
+            <!-- Gender -->
+            <li>
+              <a
+                (click)="displayGender($event)"
+                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-green-100 text-gray-500 hover:text-gray-500 border-l-4 border-transparent hover:border-green-500 pr-6"
+              >
+                <span class="inline-flex justify-center items-center ml-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="ml-2 font-semibold text-sm tracking-wide truncate font-sans"
+                  >Gender</span
+                >
+              </a>
+            </li>
+            <!-- Race -->
+            <li>
+              <a
+                (click)="displayRace($event)"
+                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-green-100 text-gray-500 hover:text-gray-500 border-l-4 border-transparent hover:border-green-500 pr-6"
+              >
+                <span class="inline-flex justify-center items-center ml-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="ml-2 font-semibold text-sm tracking-wide truncate font-sans"
+                  >Race</span
+                >
+              </a>
+            </li>
+            <!-- Operating system -->
+            <li>
+              <a
+                (click)="displayOps($event)"
+                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-green-100 text-gray-500 hover:text-gray-500 border-l-4 border-transparent hover:border-green-500 pr-6"
+              >
+                <span class="inline-flex justify-center items-center ml-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="ml-2 font-semibold text-sm tracking-wide truncate font-sans"
+                  >Operating System</span
+                >
+              </a>
+            </li>
+            <!-- Tabs or Space -->
+            <li>
+              <a
+                (click)="displayTabs($event)"
+                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-green-100 text-gray-500 hover:text-gray-500 border-l-4 border-transparent hover:border-green-500 pr-6"
+              >
+                <span class="inline-flex justify-center items-center ml-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="ml-2 font-semibold text-sm tracking-wide truncate font-sans"
+                  >Tabs or <br />
+                  Space Key
+                </span>
+              </a>
+            </li>
+
+            <!-- IDE  -->
+            <li>
+              <a
+                (click)="displayIDE($event)"
+                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-green-100 text-gray-500 hover:text-gray-500 border-l-4 border-transparent hover:border-green-500 pr-6"
+              >
+                <span class="inline-flex justify-center items-center ml-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="ml-2 font-semibold text-sm tracking-wide truncate font-sans"
+                  >IDE</span
+                >
+              </a>
+            </li>
+
+            <!-- Caps or shift key -->
+            <li>
+              <a
+                (click)="displayCaps($event)"
+                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-green-100 text-gray-500 hover:text-gray-500 border-l-4 border-transparent hover:border-green-500 pr-6"
+              >
+                <span class="inline-flex justify-center items-center ml-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="ml-2 font-semibold text-sm tracking-wide truncate font-sans"
+                  >Caps or <br />
+                  Shift Key
+                </span>
+              </a>
+            </li>
+            <!-- Technologies -->
+            <li>
+              <a
+                (click)="displayfTech($event)"
+                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-green-100 text-gray-500 hover:text-gray-500 border-l-4 border-transparent hover:border-green-500 pr-6"
+              >
+                <span class="inline-flex justify-center items-center ml-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="ml-2 font-semibold text-sm tracking-wide truncate font-sans"
+                >
+                  Future Technology
+                </span>
+              </a>
+            </li>
+            <!-- Work enviroment -->
+            <li>
+              <a
+                (click)="displayWorkspace($event)"
+                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-green-100 text-gray-500 hover:text-gray-500 border-l-4 border-transparent hover:border-green-500 pr-6"
+              >
+                <span class="inline-flex justify-center items-center ml-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="ml-2 font-semibold text-sm tracking-wide truncate font-sans"
+                  >Remote Working or <br />
+                  Working at the office</span
+                >
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<div class="my-0 ml-60">
+  <div
+    class="grid justify-items-center grid-flow-row uto-rows-max md:auto-rows-min gap-y-1 pt-28"
+  >
+  <div class="show" id="soft-skills">
+    <app-soft-skills></app-soft-skills>
+  </div>
+
+    <div class="hide" id="tech-skills">
+      <app-technical-skills></app-technical-skills>
+    </div>
+
+    <div class="hide" id="soft-skills">
+      <app-soft-skills></app-soft-skills>
+    </div>
+    <div class="hide" id="age">
+      <app-age></app-age>
+    </div>
+    <div class="hide" id="gender">
+      <app-gender></app-gender>
+    </div>
+    <div class="hide" id="ops">
+      <app-operating-system></app-operating-system>
+    </div>
+    <div class="hide" id="race">
+      <app-race></app-race>
+    </div>
+    <div class="hide" id="ide">
+      <app-ide></app-ide>
+    </div>
+    <div class="hide" id="work">
+      <app-remote-working></app-remote-working>
+    </div>
+
+    <div class="hide" id="caps">
+      <app-caps></app-caps>
+    </div>
+
+    <div class="hide" id="tabs">
+      <app-tabs></app-tabs>
+    </div>
+
+    <div class="hide" id="ftech">
+      <app-future-tech></app-future-tech>
+    </div>
+  </div>
+</div>

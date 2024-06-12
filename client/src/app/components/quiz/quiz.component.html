@@ -1,0 +1,42 @@
+<div class="w-full h-auto p-3 md:p-4 bg-white rounded-md shadow-2xl flex flex-col">
+  <div class="flex flex-col md:flex-row justify-items-end">
+
+    <div class="w-full md:w-1/2 h-auto my-8 md:my-0 text-center md:h-72 md:p-5 flex flex-col justify-center">
+      <span class="md:text-2xl font-bold">
+        {{question.question_description}}
+      </span>
+    </div>
+    <div class="w-full md:w-1/2 h-64 md:h-72 overflow-y-auto relative">
+
+      <div class="h-auto w-full text-center sticky top-0 bg-white">
+        <span class="text-md font-bold italic">
+          Select {{ question.question_type === 'single' ? 'a single option' : 'multiple options'}}</span>
+      </div>
+
+      <div class="h-auto w-full flex flex-col justify-center">
+
+        <div *ngFor="let option of question.options; let i = index;"
+          class="bg-blue-100 py-2 px-4 mx-3 my-3 rounded-2xl text-center"
+          [className]="option.checked ? 'bg-green-200 py-2 px-4 mx-3 my-3 rounded-2xl text-center' : 'bg-blue-100 py-2 px-4 mx-3 my-3 rounded-2xl text-center'">
+          <input class="invisible" [type]="question.question_type === 'single' ? 'radio': 'checkbox'"
+            id={{option.option_id}} name="answer" (change)="addOption($event, option, i)">
+          <label class="text-center cursor-pointer" for={{option.option_id}}>{{option.choice_description}}</label>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="w-full h-full flex items-end justify-end">
+    <button
+      [ngClass]="options.length > 0 ?
+      'bg-green-200 px-8 py-2 rounded-full text-sm font-extrabold border-green-400 border-4 hover:bg-green-400 hover:shadow'
+      :
+      'bg-green-100 px-8 py-2 rounded-full text-sm text-bold border-green-300 border-4 hover:bg-green-100 hover:shadow inline-block align-baseline cursor-not-allowed'"
+      (click)="onSubmit()">
+      NEXT</button>
+  </div>
+
+</div>

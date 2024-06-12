@@ -1,0 +1,41 @@
+<div class="h-48 flex flex-wrap content-start">
+  <!-- Total -->
+  <div
+    class="text-center px-10 py-5 bg-green-300 text-white w-80 h-36 max-w-xs overflow-hidden rounded-lg shadow-md hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+    <h3 class="py-2 text-2xl font-bold font-Noto+San">Working enviroments: </h3>
+    <h3 class="text-2xl font-bold text-center">{{ size }}</h3>
+  </div>
+  <!--  Highest in demand skill -->
+  <div
+    class="text-center px-10 py-5 bg-blue-300 text-white w-80 h-36 max-w-xs overflow-hidden rounded-lg shadow-md hover:shadow-2xl transition-shadow duration-300 ease-in-out ml-5">
+    <h3 class="py-2 text-2xl font-bold font-Noto+San">Most preferred working enviroment: </h3>
+    <h3 class="text-2xl font-bold text-center">{{ highest }}</h3>
+
+  </div>
+  <!-- Lowest in demand skill -->
+  <div
+    class="text-center px-10 py-5 bg-red-300 text-white w-80 h-36 max-w-xs overflow-hidden rounded-lg shadow-md hover:shadow-2xl transition-shadow duration-300 ease-in-out ml-5">
+    <h3 class="py-2 text-2xl font-bold font-Noto+San">Least preferred working enviroment: </h3>
+    <h3 class="text-2xl font-bold text-center">{{ lowest }}</h3>
+
+  </div>
+</div>
+<!-- label for remote working or working from the office -->
+<div class="bg-green-100 border-t-4 border-green-400 rounded-b text-green-900 px-4 py-3 shadow-sm my-4" role="alert">
+  <div>
+    <p class="font-bold text-center">Remote working or working at the office</p>
+  </div>
+</div>
+
+<!-- Working env pie chart -->
+<ngx-charts-pie-chart
+  *ngIf="homeOrWork.length > 0"
+  [results]="homeOrWork"
+  [legend]="true"
+  [legendTitle]="'Home or Work'"
+  [view]="[1000, 500]"
+  [labels]="true"
+  [yAxisTickFormatting]="percentTickFormatting"
+  [animations]="true"
+>
+</ngx-charts-pie-chart>

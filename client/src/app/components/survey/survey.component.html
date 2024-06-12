@@ -1,0 +1,16 @@
+<section class="absolute w-full h-full flex flex-col justify-center items-center">
+
+  <!-- Property binding used to share values with progressbar component -->
+  <div class="w-full container" *ngIf="questions[indexQuestion]">
+    <Progressbar [indexQuestion]="indexQuestion" [questions]="questions"></Progressbar>
+  </div>
+
+  <!-- Property binding used to share values with Quiz component -->
+  <div class="container px-5 md:mt-10" *ngIf="questions[indexQuestion]">
+    <Quiz [question]="questions[indexQuestion]" (onSetIndexQuestion)="onSetIndexQuestion($event)"></Quiz>
+  </div>
+
+</section>
+
+<!-- Modal component toggled by the onSetIndexQuestion method -->
+<Modal [showModal]="showModal"></Modal>

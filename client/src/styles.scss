@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+// import ama font
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+:root {
+  --green: #67f7bf;
+  --bgColor: #f9fafb;
+  --textColor: #6b7280;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--bgColor);
+  color: var(--textColor);
+}
+
+.bgImage {
+  background: url(./assets/images/dylut_bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+button:focus {
+  outline: 0;
+}

@@ -1,0 +1,60 @@
+<nav
+  class="fixed top-0 z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 bg-transparent mb-3 border-gray-100 border-b-2 bg-white bg-opacity-95"
+>
+  <div class="container px-4 mx-auto flex items-center justify-between">
+    <div
+      class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start"
+    >
+      <!-- anchor tag with a click event that routes to the default page when clicked -->
+      <a
+        class="text-md font-bold leading-relaxed inline-block py-2 whitespace-nowrap cursor-pointer hover:bg-gray-50 rounded"
+        (click)="navigateTo('/')"
+      >
+        <span class="text-green-400 text-2xl">LINK</span>
+        <span class="text-red-400 text-2xl">SKILLS</span>
+      </a>
+    </div>
+    <div class="lg:flex flex-grow items-center" id="example-navbar-warning">
+      <ul class="flex flex-row lg:flex-row list-none ml-auto">
+        <div *ngIf="!storeService.user.name">
+          <!-- List item that triggers a click event to route to the url that is passed -->
+          <li
+            class="nav-item px-2 mr-3 bg-green-200 m-2.5 rounded cursor-pointer text-gray-350 hover:bg-green-400 hover"
+            (click)="navigateTo('/linkskills/report')"
+          >
+            REPORT
+          </li>
+        </div>
+
+        <div *ngIf="!storeService.user.name">
+          <!-- List item that triggers a click event to route to the url that is passed -->
+          <li
+            class="nav-item px-2 mr-3 bg-green-200 m-2.5 rounded cursor-pointer text-gray-350 hover:bg-green-400 hover"
+            (click)="navigateTo('/linkskills/about')"
+          >
+            ABOUT
+          </li>
+        </div>
+
+        <!-- If user has a value on the store service, display it on the navigation bar -->
+        <li class="nav-item flex" *ngIf="storeService.user.name">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 text-gray-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <span class="ml-1">{{ storeService.user.name }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
